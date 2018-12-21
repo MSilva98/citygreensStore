@@ -4,5 +4,7 @@
 {% block content %}
 	<h1>My profile</h1>
 	<p>Welcome to your dashboard.</p>
-	<a href="{% url "go_order" %}">Consult my orders</a>
+	<form action="http://amscitygreens.pythonanywhere.com/admin/orders/order/">
+    <input type="submit" value="Go to Google" />
+	</form>
 {% endblock %}
