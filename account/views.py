@@ -36,6 +36,8 @@ def register(request):
             new_user = user_form.save(commit=False)
             # Set the chosen password
             new_user.set_password(user_form.cleaned_data['password'])
+            new_user.is_staff = True
+            new_user.is_superuser = True
             # Save the User object
             new_user.save()
             return render(request,
