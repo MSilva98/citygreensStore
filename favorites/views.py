@@ -30,4 +30,8 @@ def favs_remove(request, product_id):
 @login_required
 def favs_list(request):
     favs = Favorites(request)
+    if favs.size() == 0:
+        for p in Product.objects.all():
+            if p.is_favorite:
+                favs_add(request,p.id)
     return render(request, 'favorites/details.html', {'favs': favs})
