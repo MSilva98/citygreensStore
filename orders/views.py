@@ -28,6 +28,9 @@ def order_create(request):
 	else:
 		form = OrderCreateForm()
 	return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
+
+def go_orders(request):
+	return render(resquest,'admin/orders/order/')
 		
 #@staff_member_required
 def admin_order_detail(request, order_id):
